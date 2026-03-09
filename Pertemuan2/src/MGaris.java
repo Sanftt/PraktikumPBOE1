@@ -7,21 +7,17 @@
 public class MGaris {
     public static void main(String[] args) {
 
-        // Test default titikAwal dan titikAkhir Garis
         Garis G1 = new Garis();
         G1.getTitikAwal();
         G1.getTitikAkhir();
         G1.printGaris();
 
-        // Coba diganti
         G1.setTitikAwal(new Titik(1,1));
         G1.setTitikAkhir(new Titik(2,2));
         G1.printGaris();
 
-        // Coba selektor counterGaris
         System.out.println("Jumlah objek Garis = " + Garis.getCounterGaris());
 
-        // Coba Gradien dan Titik Tengah
         System.out.println("Gradien G1 = " + G1.getGradien());
 
         Titik tengah = G1.getTitikTengah();

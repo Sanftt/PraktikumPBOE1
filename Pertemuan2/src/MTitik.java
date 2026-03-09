@@ -1,6 +1,6 @@
 /* Nama File    : MTitik.java
  * Deskripsi    : berisi program utama untuk menggunakan class Titik
- * Pembuat      : Dhimas Reza Nafi Wahyudi/24060124120010
+ * Pembuat      : Akmal Dzaki Rahmatullah / 24060124140151
  * Tanggal      : Jum'at, 27 Februari 2026
  */
 
