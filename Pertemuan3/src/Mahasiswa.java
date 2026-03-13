@@ -93,7 +93,7 @@ public class Mahasiswa {
         return totalSKS;
     }
     
-    public int getJumlahMatKul() {
+    public int getJumlahMatkul() {
         return listMatkul.size();
     }
     

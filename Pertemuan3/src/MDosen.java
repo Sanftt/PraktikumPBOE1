@@ -1,4 +1,4 @@
-/* Nama File    : NDosen.java
+/* Nama File    : MDosen.java
  * Deskripsi    : berisi program utama untuk menggunakan class NDosen
  * Pembuat      : Akmal Dzaki Rahmatullah / 24060124140151
  * Tanggal      : Kamis, 5 Maret 2026
