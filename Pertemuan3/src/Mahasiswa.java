@@ -1,3 +1,9 @@
+/* Nama File    : Mahasiswa.java
+ * Deskripsi    : berisi atribut dan method dalam class Mahasiswa
+ * Pembuat      : Akmal Dzaki Rahmatullah / 24060124140151
+ * Tanggal      : Kamis, 5 Maret 2026
+ */
+
 import java.util.ArrayList;
 
 public class Mahasiswa {
@@ -6,8 +12,8 @@ public class Mahasiswa {
     private String nim;
     private String nama;
     private String prodi;
-    ArrayLisy<MataKuliah> listmatkul;
-    private dosen dosenWali;
+    private ArrayList<Matkul> listMatkul;
+    private Dosen dosenWali;
     private Kendaraan kendaraan;
 
     public Mahasiswa(){
@@ -21,8 +27,7 @@ public class Mahasiswa {
         this.nim = nim;
         this.nama = nama;
         this.prodi = prodi;
-        this.listMatKul = new MataKuliah[50];
-        this.jumlahMatKul = 0;
+        this.listMatkul = new ArrayList<>();
         this.dosenWali = null;
         this.kendaraan = null;
     }
@@ -47,8 +52,8 @@ public class Mahasiswa {
         return kendaraan;
     }
     
-    public MataKuliah[] getListMatKul() {
-        return listMatKul;
+    public ArrayList<Matkul> getListMatkul() {
+        return listMatkul;
     }
     
     public void setNim(String nim) {
@@ -71,10 +76,9 @@ public class Mahasiswa {
         this.kendaraan = kendaraan;
     }
     
-    public void addMatKul(MataKuliah mk) {
-        if (jumlahMatKul < 50) {
-            listMatKul[jumlahMatKul] = mk;
-            jumlahMatKul++;
+    public void addMatkul(Matkul mk) {
+        if (listMatkul.size() < 50) {
+            listMatkul.add(mk);
             System.out.println("Mata kuliah " + mk.getNama() + " berhasil ditambahkan");
         } else {
             System.out.println("Tidak dapat menambah mata kuliah, sudah mencapai batas maksimal 50");
@@ -83,14 +87,14 @@ public class Mahasiswa {
     
     public int getJumlahSKS() {
         int totalSKS = 0;
-        for (int i = 0; i < jumlahMatKul; i++) {
-            totalSKS += listMatKul[i].getSks();
+        for (int i = 0; i < listMatkul.size(); i++) {  // Menggunakan for i
+            totalSKS += listMatkul.get(i).getsks();
         }
         return totalSKS;
     }
     
     public int getJumlahMatKul() {
-        return jumlahMatKul;
+        return listMatkul.size();
     }
     
     public void printMhs() {
@@ -108,11 +112,11 @@ public class Mahasiswa {
         System.out.println("Prodi       : " + prodi);
         
         System.out.println("\n DAFTAR MATA KULIAH YANG DIAMBIL ");
-        if (jumlahMatKul > 0) {
-            for (int i = 0; i < jumlahMatKul; i++) {
-                System.out.println((i+1) + ". " + listMatKul[i].getNama() + 
-                                   " (" + listMatKul[i].getIdMatKul() + 
-                                   ") - " + listMatKul[i].getSks() + " SKS");
+        if (!listMatkul.isEmpty()) {
+            for (int i = 0; i < listMatkul.size(); i++) {
+                System.out.println((i+1) + ". " + listMatkul.get(i).getNama() + 
+                                   " (" + listMatkul.get(i).getIdMatkul() + 
+                                   ") - " + listMatkul.get(i).getsks() + " SKS");
             }
             System.out.println("Total SKS   : " + getJumlahSKS());
         } else {
@@ -121,7 +125,7 @@ public class Mahasiswa {
         
         System.out.println("\n DOSEN WALI ");
         if (dosenWali != null) {
-            System.out.println("NIP         : " + dosenWali.getNip());
+            System.out.println("NIP         : " + dosenWali.getNIP());
             System.out.println("Nama        : " + dosenWali.getNama());
             System.out.println("Prodi       : " + dosenWali.getProdi());
         } else {
